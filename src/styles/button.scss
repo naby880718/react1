@@ -1,0 +1,77 @@
+/****************************************************
+*    BUTTON
+******************************************************/
+.btn{
+    text-decoration: none;
+    &+.btn{
+        margin-left: 4px;
+    }
+    min-width: 200px;
+    padding: 0 15px;
+    height: 50px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: $main;
+    @include font($white, 14px, normal);
+    line-height: 1;
+    vertical-align: middle;
+    text-align: center;
+    &:hover{
+        background-color: $main_dark; 
+    }
+    &:focus{
+        background-color: $main_light;
+    }
+    &:disabled{
+        background-color: $main_disabled;
+        color: $white;
+    }
+    &.full{
+        width: 100%;
+    }
+    
+    //style
+    &.red{
+        background-color: $red;
+        &:hover{
+            background-color: $red_dark;
+        }
+        &:focus{
+            background-color: $red_light;
+        }
+        &:disabled{
+            background-color: $red_disabled;
+        }
+    }
+    &.line{
+        border: 1px solid $gray05;
+        background-color: $white;
+        color: $gray07;
+        &:hover{
+            background-color: $gray01;
+        }
+        &:focus{
+            background-color: $gray02;
+        }
+        &:disabled{
+            border-color: $main_disabled;
+            color: $main_disabled;
+        }
+    }
+}
+// btn_wrap
+.btn{
+    &_wrap{
+        @include flexbox(center, center);
+        font-size: 0;
+        &.start{
+            justify-content: flex-start;
+        }
+        &.end{
+            justify-content: flex-end;
+        }
+        &.between{
+            justify-content: space-between;
+        }
+    }
+}

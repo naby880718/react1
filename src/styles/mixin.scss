@@ -1,0 +1,162 @@
+// 리소스 이미지 앞 루트 경로
+$res_root: 'http://localhost:3002';
+
+// 리소스 이미지 뒤 버전 관리
+$ver: '?ver=20230714';
+
+// flexbox
+$flex-map: (
+    start: flex-start,
+    end: flex-end,
+    between: space-between,
+    around: space-around,
+    stretch: stretch,
+    center: center,
+);
+
+@function _get-flex-value($key) {
+    @return map-get($flex-map, $key);
+}
+
+@mixin flexbox($js: center, $ai: center) {
+    display: flex;
+    align-items: _get-flex-value($ai);
+    justify-content: _get-flex-value($js);
+}
+
+@mixin inline_flexbox($js: center, $ai: center) {
+    display: inline-flex;
+    align-items: _get-flex-value($ai);
+    justify-content: _get-flex-value($js);
+}
+
+@mixin col_flexbox($js: center, $ai: center) {
+    display: flex;
+    flex-direction: column;
+    align-items: _get-flex-value($ai);
+    justify-content: _get-flex-value($js);
+}
+
+@mixin col_inline_flexbox($js: center, $ai: center) {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: _get-flex-value($ai);
+    justify-content: _get-flex-value($js);
+}
+
+// position center
+@mixin pos_center_x($type: absolute) {
+    @if ($type ==fixed or $type ==absolute) {
+        position: $type;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@mixin pos_center_y($type: absolute) {
+    @if ($type ==fixed or $type ==absolute) {
+        position: $type;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@mixin pos_center($type) {
+    @if ($type ==fixed or $type ==absolute) {
+        position: $type;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+//position absolute
+@mixin pos_top_left($top, $left) {
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+@mixin pos_top_right($top, $right) {
+    position: absolute;
+    top: $top;
+    right: $right;
+}
+@mixin pos_bottom_left($bottom, $left) {
+    position: absolute;
+    bottom: $bottom;
+    left: $left;
+}
+@mixin pos_bottom_right($bottom, $right) {
+    position: absolute;
+    bottom: $bottom;
+    right: $right;
+}
+
+//ellipsis
+@mixin ellipsis($line: 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @if ($line ==1) {        
+        white-space: nowrap;
+    }
+    @else {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;
+    }
+}
+
+//background image
+@mixin bgimg($name, $type) {
+    $url: "#{$res_root}/resources/img/#{$name}.#{$type}";
+    background: url($url + $ver) no-repeat;
+}
+
+//icon
+@mixin ico($name, $type) {
+    $url: "#{$res_root}/resources/img/#{$name}.#{$type}";
+    background: url($url) no-repeat;
+    overflow: hidden;
+    color: transparent;
+    vertical-align: middle;
+}
+
+//font
+@mixin font($color, $size, $weight) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+//shadow
+@mixin shadow($x, $y, $blur, $color) {
+    -webkit-box-shadow: $x $y $blur $color;
+    -moz-box-shadow: $x $y $blur $color;
+    box-shadow: $x $y $blur $color;
+}
+
+//round
+@mixin rounded($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+//scroll
+@mixin scroll($max-height) {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: $max-height;
+}
+
+//input hide
+@mixin inputhide {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    border: 0 !important;
+}

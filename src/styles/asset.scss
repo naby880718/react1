@@ -1,0 +1,53 @@
+/*******************************************
+*    Assets
+********************************************/
+
+/* font  */
+$commonFont: 'Noto Sans KR' , sans-serif;
+
+/* font size */
+$f12: 12px;
+$f14: 14px;
+$f16: 16px;
+.f12 {font-size: $f12;}
+.f14 {font-size: $f14;}
+.f16 {font-size: $f16;}
+
+/* color */
+$main: #0090C6;
+$main_dark: #0076A2;
+$main_light: #1FACE1;
+$main_disabled: #DCDCDC;
+$red : #FF5151;
+$red_dark: #F1354F;
+$red_light: #FF7070;
+$red_disabled: #FFBCBC;
+$green: #0DAB66;
+$black: #000000;
+$white: #ffffff;
+$gray01: #F6F6F6;
+$gray02: #EBEBEB;
+$gray03: #DEDEDE;
+$gray04: #C1C1C1;
+$gray05: #9E9E9E;
+$gray06: #878787;
+$gray07: #747474;
+$gray08: #646464;
+$gray09: #403F3F;
+
+
+/* line & Bg color set */
+$border_common : $gray03;
+$main_bg: $main;
+$ipt_bg : $gray01;
+
+.ico{
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.ico_cir_del{
+    width: 20px;
+    height: 20px;
+    @include ico(ico_cir_del, svg);
+}

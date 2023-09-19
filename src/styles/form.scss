@@ -1,0 +1,126 @@
+/****************************************************
+*    Input
+******************************************************/
+.ipt_box{
+    width: 360px;
+    display: inline-block;
+    vertical-align: middle;    
+    &+.btn , &+span{
+        margin-left: 4px;
+    }
+    &.full{
+        width: 100%;
+    }
+}
+
+input[type=text],
+input[type=email],
+input[type=number],
+input[type=password]{
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+    padding: 0px 10px;
+    border: 0;
+    border-bottom: 1px solid $gray05;
+    @include font($gray09, 14px, 400);
+    &::-webkit-input-placeholder {
+        color: $gray04;
+    }
+    &:focus {
+        background-color: $ipt_bg;
+        color: $gray09;
+        border-width: 2px;
+        border-color: $main;
+        &::-webkit-input-placeholder {
+            color: transparent;
+        }
+    }
+    &:disabled {
+        background-color: $ipt_bg;
+        color: $black;
+    }
+    &.error {
+        border-width: 2px;
+        border-color: $red;
+    }
+}
+//Message
+.msg {
+    display: inline-block;
+    margin-top: 4px;
+    @include font($gray05, 12px, normal);
+    letter-spacing: 0;
+    line-height: 1.5;
+    &.error {
+        color: $red;
+    }
+    &.correct {
+        color: $main;
+    }
+}
+
+/****************************************************
+*    RADIO
+******************************************************/
+.rdo_box{
+    @include inline_flexbox(center, center);
+    vertical-align: middle;
+    &+.ipt_box{
+        margin-left: 10px;
+    }
+    &+.rdo_box{
+        margin-left: 36px;
+    }
+}
+input[type="radio"]{
+    @include inputhide;
+    width: 16px;
+    height: 16px;
+    left: -9999em;    
+    cursor: pointer;
+    & + label{
+        @include inline_flexbox(center, center);
+        position: relative;
+        padding-right: 20px;
+        @include font($black, 14px, 400);
+        cursor: pointer;        
+        &:before{
+            content:'';
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+            background-color: $white;
+            border: 1px solid $gray03;
+            @include rounded(50%);
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+        &:after{
+            content: '';
+            @include pos_top_left(5px, 2.8px);
+            width: 10px;
+            height: 10px;
+            background-color: $white;
+            @include rounded(50%);
+        }
+        &.label_hide{
+            padding: 0;
+            font-size: 0;
+            &:before{
+                margin: 0;
+            }
+        }
+    }
+    &:checked{
+        &+label{
+            color: $main;
+            &:before{
+                border-color: $main;
+            }
+            &:after{
+                background-color: $main;
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_18" data-name="사각형 18" width="100" height="100" transform="translate(330 200)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="img_profile" transform="translate(-330 -200)">
+    <rect id="사각형_17" data-name="사각형 17" width="100" height="100" transform="translate(330 200)" fill="#ccc"/>
+    <g id="그룹_26094" data-name="그룹 26094">
+      <g id="그룹_26093" data-name="그룹 26093" clip-path="url(#clip-path)">
+        <g id="그룹_26092" data-name="그룹 26092">
+          <circle id="타원_1114" data-name="타원 1114" cx="21" cy="21" r="21" transform="translate(359 214)" fill="#fff"/>
+          <ellipse id="타원_1115" data-name="타원 1115" cx="36" cy="51" rx="36" ry="51" transform="translate(344 253)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

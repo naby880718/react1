@@ -1,0 +1,11 @@
+.wrapper{max-width: 1920px;min-width: 1200px;min-height: 100%;margin: 0 auto;color: #fff;text-align: center;background: #999;height: 1500px;}
+@media all and (max-width: 1024px){
+    .wrapper{background: #ff0000;height: 1000px;}
+}
+
+@media all and (max-width: 768px){
+    .wrapper{background: #1100ff;height: 800px;}
+}
+@media all and (max-width: 374px) {
+    .wrapper{background: #0dff00;height: 400px;}
+}
